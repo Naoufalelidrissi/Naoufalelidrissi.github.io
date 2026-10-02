@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESC triphasé BLDC — SVPWM &amp; Back-EMF | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#projects" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">Projet d'électronique de puissance</span>
+      <h1>ESC triphasé pour moteur BLDC : simulation, conception PCB et prototype</h1>
+      <p class="stage-subtitle">Onduleur à six MOSFETs, commande vectorielle SVPWM et détection de position par Back-EMF</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-microchip"></i> Arduino Nano + IR2101</span>
+        <span><i class="fas fa-pencil-ruler"></i> Altium Designer</span>
+        <span><i class="fas fa-laptop-code"></i> MATLAB/Simulink</span>
+      </div>
+    </header>
+
+    <!-- VIDEO -->
+    <section class="stage-section">
+      <h2>Démonstration</h2>
+      <div class="stage-video-wrapper">
+        <video controls preload="metadata" poster="assets/img/projects/onduleur/img4.png">
+          <source src="assets/video/esc-bldc.mp4" type="video/mp4" />
+          Ton navigateur ne peut pas lire cette vidéo.
+        </video>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="stage-section">
+      <h2>Introduction</h2>
+      <p>
+        Dans le cadre du module d'électronique de puissance, j'ai développé un
+        <strong>Electronic Speed Controller (ESC)</strong> basé sur un onduleur triphasé intégrant une
+        commande vectorielle (FOC). Cette approche vise un contrôle optimal des moteurs BLDC/PMSM :
+        rendement élevé, réponse dynamique rapide et maîtrise précise du couple et de la vitesse.
+      </p>
+    </section>
+
+    <!-- CHIFFRES CLES -->
+    <section class="stage-section">
+      <div class="stage-stats">
+        <div class="stage-stat"><span class="stage-stat-value">6</span><span class="stage-stat-label">MOSFETs de puissance</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">6</span><span class="stage-stat-label">Secteurs de commutation</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">0</span><span class="stage-stat-label">Capteur Hall</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">SVPWM</span><span class="stage-stat-label">Modulation vectorielle</span></div>
+      </div>
+    </section>
+
+    <!-- SIMULATION -->
+    <section class="stage-section">
+      <h2>Simulation MATLAB/Simulink</h2>
+      <p>
+        Avant la réalisation, une simulation complète sous MATLAB/Simulink a servi à modéliser le
+        comportement du moteur et à valider l'algorithme de commande, en trois étapes :
+      </p>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-compass"></i>
+          <h4>1. Angle du rotor (θ)</h4>
+          <p>L'algorithme extrait la position angulaire en temps réel pour <strong>identifier le secteur</strong> du rotor</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-project-diagram"></i>
+          <h4>2. Vecteur de commande</h4>
+          <p>À partir de l'angle, le modèle calcule le <strong>vecteur optimal</strong> selon la stratégie de commande vectorielle</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-bolt"></i>
+          <h4>3. Commande de l'onduleur</h4>
+          <p>La modulation <strong>SVPWM</strong> pilote les six MOSFETs du pont triphasé pour une commutation fluide et efficace</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HARDWARE -->
+    <section class="stage-section">
+      <h2>Développement de la carte électronique</h2>
+      <p>Une fois la simulation validée, la partie matérielle a été conçue et testée :</p>
+      <ul class="stage-list">
+        <li><strong>Microcontrôleur :</strong> Arduino Nano, qui exécute l'algorithme de commande</li>
+        <li><strong>Pilotes de grille :</strong> IR2101, pour une commutation rapide des MOSFETs</li>
+        <li><strong>Onduleur triphasé :</strong> 6 MOSFETs pour la conversion et la distribution d'énergie</li>
+        <li><strong>Chaîne de retour Back-EMF :</strong> détection de la position du rotor sans capteurs Hall, par suivi du passage par zéro des tensions de phase</li>
+        <li><strong>PCB sous Altium Designer :</strong> schéma, routage multicouche et modèle 3D, optimisés pour la performance et la fiabilité</li>
+      </ul>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>Électronique de puissance</span>
+        <span>Onduleur triphasé</span>
+        <span>BLDC / PMSM</span>
+        <span>SVPWM</span>
+        <span>Back-EMF</span>
+        <span>IR2101</span>
+        <span>MOSFET</span>
+        <span>Altium Designer</span>
+        <span>MATLAB/Simulink</span>
+        <span>Arduino</span>
+      </div>
+    </section>
+
+    <!-- GALERIE MATERIEL -->
+    <section class="stage-section">
+      <h2>Conception matérielle</h2>
+      <div class="stage-figures">
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img1.png" alt="Modèle 3D du PCB" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Modèle 3D du PCB de l'ESC</strong>Visualisation complète de la carte électronique</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img2.png" alt="Structure interne du PCB" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Structure interne du PCB</strong>Visualisation des différentes couches de routage</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img3.png" alt="Schéma Altium Designer" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Schéma sous Altium Designer</strong>Conception détaillée de l'onduleur triphasé</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img4.jpg" alt="Réalisation physique de la carte" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Réalisation physique de la carte ESC</strong>Prototype final assemblé et testé</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- GALERIE SIMULATION -->
+    <section class="stage-section">
+      <h2>Simulation et principe de commande</h2>
+      <div class="stage-figures">
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img5.png" alt="Boucle globale de commande" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Boucle globale de commande sous Simulink</strong>Régulation de vitesse via consigne, PID et chaîne de retour</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img6.jpg" alt="Réponse dynamique du système" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Réponse dynamique du système</strong>Évolution exponentielle de la vitesse régulée du moteur</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img7.png" alt="Principe de l'onduleur triphasé" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Principe de fonctionnement d'un onduleur triphasé</strong>Structure et séquence de commutation</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img8.png" alt="Modélisation de l'onduleur SVPWM" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Modélisation de l'onduleur sous MATLAB</strong>Commande des six MOSFETs en SVPWM</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img9.jpg" alt="Signal trapézoïdal" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Signal trapézoïdal généré par l'onduleur</strong>Forme d'onde des tensions de phase simulée</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img10.png" alt="Sélection du vecteur de commande" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Sélection du vecteur de commande</strong>Algorithme de commutation vectorielle</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img11.png" alt="Détection du secteur du rotor" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Détection du secteur du rotor</strong>Identification de la position pour la commutation optimale</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="assets/img/projects/onduleur/img12.png" alt="Répartition des six secteurs" onclick="openLightbox(this.src)" />
+          <figcaption><strong>Répartition des six secteurs du moteur BLDC</strong>Identification des zones de commutation</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

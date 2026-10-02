@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage — Renault Tanger Exploitation | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#experience" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">Soutenu le 14 juin 2023 — 2 mois</span>
+      <h1>Amélioration du temps de cycle de l'assemblage général de la caisse du véhicule (zones BM30 et BM80)</h1>
+      <p class="stage-subtitle">Stage technique — Automatisme &amp; supervision industrielle, Diplôme Universitaire de Technologie</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-building"></i> Renault Tanger Exploitation — Département Tôlerie / Atelier Maintenance</span>
+        <span><i class="fas fa-map-marker-alt"></i> Tanger, Maroc</span>
+        <span><i class="fas fa-user-tie"></i> Parrain industriel : M. El-Amine Said</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte</h2>
+      <p>
+        Ce stage s'est déroulé chez <strong>Renault Tanger Exploitation</strong>, au département Tôlerie,
+        sur les zones <strong>BM30 et BM80</strong> de la ligne d'assemblage générale de la caisse
+        automobile. L'objectif était d'identifier les goulots d'étranglement dans le processus de
+        production, à travers l'analyse des temps et mouvements, puis de proposer et implémenter des
+        solutions d'automatisation et de supervision pour réduire le temps de cycle global — en suivant
+        la démarche <strong>PDCA</strong> (Plan, Do, Check, Act).
+      </p>
+    </section>
+
+    <!-- ARCHITECTURE TECHNIQUE -->
+    <section class="stage-section">
+      <h2>Solutions mises en œuvre</h2>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-desktop"></i>
+          <h4>Interface IHM (BM30)</h4>
+          <p>Page développée sous <strong>ODIL</strong> affichant en temps réel le nombre de points de soudage et de rodage réalisés par les robots</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-code"></i>
+          <h4>Programme Step7</h4>
+          <p>Gestion automatique des voyants de l'IHM signalant le remplacement nécessaire des électrodes des robots</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-exclamation-circle"></i>
+          <h4>Gyrophare d'alerte</h4>
+          <p>Signal visuel déclenché à 50 points de soudage restants avant le changement obligatoire d'électrodes</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-volume-up"></i>
+          <h4>Sirène (BM80)</h4>
+          <p>Programme Step7 activant une sirène via bouton poussoir pour signaler un manque de pièces</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-network-wired"></i>
+          <h4>Communication inter-automates</h4>
+          <p>Échange d'informations entre 3 automates Siemens pour alerter un poste distant en temps réel</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-sync-alt"></i>
+          <h4>Méthode PDCA</h4>
+          <p>Plan → Do → Check → Act, appliquée de bout en bout pour structurer la démarche d'amélioration continue</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS -->
+    <section class="stage-section">
+      <h2>Réalisations</h2>
+      <ul class="stage-list">
+        <li>Amélioration du temps de cycle dans les zones BM30 et BM80 via l'automatisation et la supervision des opérations</li>
+        <li>Création et installation d'une interface HMI (page IHM) sous ODIL en zone BM30, affichage temps réel des points de soudage et de rodage</li>
+        <li>Développement d'un programme Step7 pour la gestion automatique des voyants de l'IHM (alerte remplacement électrodes)</li>
+        <li>Installation d'un gyrophare signalant qu'il reste 50 points de soudage avant changement obligatoire des électrodes</li>
+        <li>Conception d'un programme Step7 en zone BM80 activant une sirène via bouton poussoir</li>
+        <li>Mise en place d'une communication inter-automates entre 3 automates Siemens : transmission du signal de manque de pièces vers un poste distant pour acheminement rapide d'un nouveau chariot</li>
+      </ul>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="stage-section">
+      <h2>Résultat</h2>
+      <p>
+        L'implémentation du bouton poussoir de signalement en zone BM80 a réduit les déplacements
+        inutiles des opérateurs et amélioré la coordination entre équipes. L'ajout du gyrophare et de la
+        page IHM sous ODIL en zone BM30 a considérablement réduit le temps de préparation lié au
+        changement d'électrodes. Ensemble, ces solutions ont contribué à réduire le temps de cycle global,
+        augmenter la capacité de production et optimiser l'utilisation des ressources sur la ligne
+        d'assemblage.
+      </p>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>Step7</span>
+        <span>IHM ODIL</span>
+        <span>Automates Siemens</span>
+        <span>Communication inter-automates</span>
+        <span>PDCA</span>
+        <span>Amélioration continue</span>
+      </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section class="stage-section">
+      <h2>Photos</h2>
+      <div class="stage-gallery">
+        <img src="assets/img/stages/renault/img1.jpg" alt="Photo stage Renault 1" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/renault/img2.jpg" alt="Photo stage Renault 2" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/renault/img3.jpg" alt="Photo stage Renault 3" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/renault/img4.jpg" alt="Photo stage Renault 4" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- RAPPORT PDF -->
+    <section class="stage-section">
+      <h2>Rapport de stage complet</h2>
+      <div class="stage-pdf-wrapper">
+        <iframe src="assets/pdf/rapport-renault.pdf" title="Rapport de stage Renault"></iframe>
+      </div>
+      <a href="assets/pdf/rapport-renault.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le rapport PDF
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2e place — Hackathon d'Innovation ENSEM Forum | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#distinctions" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">🥈 2e place</span>
+      <h1>2e place au Hackathon d'Innovation — ENSEM Forum</h1>
+      <p class="stage-subtitle">École Nationale Supérieure d'Électricité et de Mécanique</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-trophy"></i> 2e place</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte</h2>
+      <p>
+        Dans le cadre de l'<strong>ENSEM Forum</strong>, j'ai participé au <strong>Hackathon
+        d'Innovation</strong> organisé par l'École Nationale Supérieure d'Électricité et de Mécanique,
+        où notre équipe a remporté la <strong>2e place</strong>.
+      </p>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="stage-section">
+      <h2>Photos</h2>
+      <div class="stage-gallery">
+        <img src="assets/img/distinctions/innovation-presentation.jpg" alt="Présentation du projet au Hackathon d'Innovation ENSEM" onclick="openLightbox(this.src)" />
+        <img src="assets/img/distinctions/innovation-podium.jpg" alt="Podium du Hackathon d'Innovation ENSEM" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- CERTIFICAT -->
+    <section class="stage-section">
+      <h2>Certificat de participation</h2>
+      <div class="stage-cert-wrapper">
+        <iframe src="assets/pdf/certificat-innovation.pdf" title="Certificat de participation Hackathon d'Innovation ENSEM"></iframe>
+      </div>
+      <a href="assets/pdf/certificat-innovation.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le certificat
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

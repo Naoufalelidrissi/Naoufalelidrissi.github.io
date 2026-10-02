@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage — CMCP International Paper | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#experience" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">2024 — 2 mois</span>
+      <h1>Dimensionnement et analyse technique de l'installation d'un nouveau transformateur de 2500 kVA</h1>
+      <p class="stage-subtitle">Stage d'observation — Études électriques HTA/BT</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-building"></i> CMCP International Paper</span>
+        <span><i class="fas fa-map-marker-alt"></i> Kénitra, Maroc</span>
+        <span><i class="fas fa-user-tie"></i> Parrain industriel : M. Driouch Mohammed</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte</h2>
+      <p>
+        Ce stage s'est déroulé chez <strong>CMCP International Paper</strong>, filiale marocaine du
+        groupe américain International Paper et leader national de la fabrication de papier et carton,
+        sur son site industriel de <strong>Kénitra</strong>. L'objectif était de dimensionner et analyser
+        l'installation électrique nécessaire au remplacement d'un transformateur existant de 2000 kVA par
+        un nouveau transformateur de <strong>2500 kVA</strong>, afin de garantir que l'infrastructure
+        puisse supporter cette augmentation de capacité en toute sécurité et fiabilité.
+      </p>
+    </section>
+
+    <!-- ARCHITECTURE TECHNIQUE -->
+    <section class="stage-section">
+      <h2>Démarche technique</h2>
+      <p>
+        Le dimensionnement des câbles a suivi une méthodologie normative complète, en retenant à chaque
+        étape la section la plus contraignante :
+      </p>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-thermometer-half"></i>
+          <h4>Section S1 — Échauffement</h4>
+          <p>Courant admissible en régime permanent, corrigé par les coefficients de pose, température et nature du sol</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-bolt"></i>
+          <h4>Section S2 — Court-circuit</h4>
+          <p>Tenue thermique du conducteur face au courant de défaut, selon la durée d'intervention des protections</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Section S3 — Écran du câble</h4>
+          <p>Tenue thermique de l'écran en cas de défaut à la terre</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-arrow-down"></i>
+          <h4>Chute de tension</h4>
+          <p>Vérification sur la longueur de la canalisation (110 m, câble aluminium) pour rester dans les limites admissibles</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Simulation ETAP</h4>
+          <p>Modélisation complète de l'installation : transformateur, disjoncteurs, jeu de barres, câble, TC</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h4>Arc Flash</h4>
+          <p>Analyse du risque d'arc électrique en primaire et secondaire, génération des étiquettes de danger réglementaires</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS -->
+    <section class="stage-section">
+      <h2>Réalisations</h2>
+      <ul class="stage-list">
+        <li>Étude technique et conception de l'installation électrique dans le respect des normes de sécurité et de fiabilité</li>
+        <li>Détermination du courant maximal d'emploi et calcul des sections de câbles (S1, S2, S3) selon la méthodologie normative</li>
+        <li>Modélisation complète de l'installation sous <strong>ETAP</strong> : schéma unifilaire, paramétrage transformateur, disjoncteurs, jeu de barres, transformateur de courant</li>
+        <li>Calcul de la section optimale du câble (35 mm², aluminium, 110 m) par le module de dimensionnement ETAP</li>
+        <li>Analyse de flux de charge (load flow) : validation de la chute de tension du système</li>
+        <li>Étude de court-circuit côté HT primaire et BT secondaire, vérification des pouvoirs de coupure des disjoncteurs</li>
+        <li>Analyse Arc Flash et génération des étiquettes de danger (énergie incidente, distances de sécurité, niveaux d'EPI)</li>
+        <li>Contribution à l'optimisation de l'efficacité énergétique et à la fiabilité du système électrique</li>
+      </ul>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="stage-section">
+      <h2>Résultats</h2>
+      <p>
+        Le transformateur de 2500 kVA (20 kV / 400 V) a été validé pour alimenter une charge de 2000 kVA,
+        avec un courant assigné de 3608 A. L'analyse de flux de charge a montré une chute de tension
+        minimale de 2,58 %, largement dans les normes acceptables. Côté court-circuit, les disjoncteurs
+        HT (12,5 kA / 32,5 kA) et BT (100 kA) se sont révélés largement dimensionnés face aux courants de
+        défaut calculés (4,8 kA en primaire, 60,4 kA en secondaire), offrant une marge de sécurité
+        confortable. L'analyse Arc Flash a permis de générer les étiquettes de danger réglementaires,
+        avec un niveau de protection D en primaire et E en secondaire.
+      </p>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>ETAP</span>
+        <span>HTA/BT</span>
+        <span>Dimensionnement de câbles</span>
+        <span>Load Flow</span>
+        <span>Court-circuit</span>
+        <span>Arc Flash</span>
+        <span>Coordination des protections</span>
+      </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section class="stage-section">
+      <h2>Photos</h2>
+      <div class="stage-gallery">
+        <img src="assets/img/stages/cmcp/img1.jpg" alt="Photo stage CMCP 1" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/cmcp/img2.png" alt="Photo stage CMCP 2" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/cmcp/img3.png" alt="Photo stage CMCP 3" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- RAPPORT PDF -->
+    <section class="stage-section">
+      <h2>Rapport de stage complet</h2>
+      <div class="stage-pdf-wrapper">
+        <iframe src="assets/pdf/rapport-cmcp.pdf" title="Rapport de stage CMCP"></iframe>
+      </div>
+      <a href="assets/pdf/rapport-cmcp.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le rapport PDF
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>     

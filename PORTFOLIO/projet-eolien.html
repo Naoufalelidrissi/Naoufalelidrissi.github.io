@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Système éolien PMSM — FOC &amp; MPPT | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#projects" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">Projet de fin de module — 2025-2026</span>
+      <h1>Modélisation et commande d'un système éolien à PMSM pour l'injection dans un réseau basse tension 400 V</h1>
+      <p class="stage-subtitle">Commande vectorielle FOC, MPPT par conductance incrémentale et onduleur à trois niveaux</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-university"></i> ENSET Mohammedia — Génie Électrique et Énergies Renouvelables</span>
+        <span><i class="fas fa-users"></i> Projet en binôme avec Hamza Briguam</span>
+        <span><i class="fas fa-user-tie"></i> Proposé par Pr. Adil Mansouri</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte et objectif</h2>
+      <p>
+        Les éoliennes à vitesse variable exploitent au mieux l'énergie du vent, mais elles exigent une
+        électronique de puissance capable d'adapter la machine, le bus continu et le réseau. L'objectif
+        de ce projet était de <strong>modéliser et commander une chaîne complète de conversion éolienne</strong>
+        connectée à un réseau triphasé 400 V, puis de la valider par simulation sous
+        <strong>MATLAB/Simulink</strong> : performances dynamiques, stabilité et efficacité de la stratégie de commande.
+      </p>
+    </section>
+
+    <!-- CHIFFRES CLES -->
+    <section class="stage-section">
+      <div class="stage-stats">
+        <div class="stage-stat"><span class="stage-stat-value">25 kW</span><span class="stage-stat-label">Puissance nominale</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">12 m/s</span><span class="stage-stat-label">Vitesse de vent nominale</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">700 V</span><span class="stage-stat-label">Tension du bus DC</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">400 V</span><span class="stage-stat-label">Réseau basse tension</span></div>
+      </div>
+    </section>
+
+    <!-- CHAINE DE CONVERSION -->
+    <section class="stage-section">
+      <h2>Chaîne de conversion modélisée</h2>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-wind"></i>
+          <h4>Turbine éolienne</h4>
+          <p>Modèle aérodynamique avec coefficient de puissance <strong>Cp(λ, β)</strong>, entraînement direct de la machine (sans multiplicateur)</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-cog"></i>
+          <h4>Machine PMSM</h4>
+          <p>Modélisation dans le repère tournant <strong>(d, q)</strong> : équations électriques, couple électromagnétique et dynamique mécanique</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-sliders-h"></i>
+          <h4>Redresseur — commande FOC</h4>
+          <p>Régulation des courants <strong>id et iq</strong> avec découplage, référence id* = 0 et iq* déduite du couple issu du MPPT</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>MPPT &amp; angle de calage</h4>
+          <p><strong>Conductance incrémentale</strong> pour l'extraction maximale, et contrôle de l'angle β pour limiter la puissance au-delà de 12 m/s</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-battery-full"></i>
+          <h4>Bus continu</h4>
+          <p>Deux condensateurs en série alimentant l'onduleur trois niveaux, tension régulée à <strong>700 V</strong></p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-plug"></i>
+          <h4>Onduleur 3 niveaux &amp; PLL</h4>
+          <p>Onduleur <strong>NPC</strong> à diodes clampées, synchronisation réseau par PLL, filtre de sortie, puissance réactive régulée à 0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REALISATIONS -->
+    <section class="stage-section">
+      <h2>Réalisations</h2>
+      <ul class="stage-list">
+        <li>Modélisation complète de la chaîne : turbine, machine électrique, convertisseurs, bus DC et injection réseau</li>
+        <li>Implémentation de la commande vectorielle (FOC) pour un contrôle précis du couple et de la vitesse de la machine</li>
+        <li>Développement d'un algorithme MPPT par conductance incrémentale pour maximiser l'extraction de puissance</li>
+        <li>Conception d'un onduleur triphasé à trois niveaux avec synchronisation réseau via PLL</li>
+        <li>Régulation de la tension du bus continu et contrôle indépendant des puissances active et réactive injectées</li>
+        <li>Simulation et validation sous MATLAB/Simulink, avec analyse des performances dynamiques et énergétiques</li>
+      </ul>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="stage-section">
+      <h2>Résultats de simulation</h2>
+      <p>
+        Le couple électromagnétique et la vitesse de rotation suivent leurs références, y compris lors des
+        variations du profil de vent. Au-dessus de 12 m/s, l'angle de calage β augmente et sature la
+        puissance de la turbine à 25 kW. La tension du bus DC reste stable autour de 700 V après le régime
+        transitoire initial, et la puissance réactive est maintenue proche de zéro. Les tensions de sortie
+        de l'onduleur, une fois filtrées, sont quasi sinusoïdales. Côté bilan de puissance, l'écart entre
+        la turbine et l'électrique est d'environ 1 kW, avec un minimum de pertes d'environ 300 W entre le
+        bus DC et le réseau.
+      </p>
+      <p>
+        Ce travail pose une base pour des études ultérieures : intégration dans un réseau intelligent,
+        optimisation des stratégies de commande ou extension à plusieurs éoliennes.
+      </p>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>MATLAB/Simulink</span>
+        <span>PMSM</span>
+        <span>Commande FOC</span>
+        <span>MPPT</span>
+        <span>Onduleur 3 niveaux NPC</span>
+        <span>PLL</span>
+        <span>Bus DC</span>
+        <span>Pitch control</span>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="stage-section">
+      <h2>Modèles Simulink et résultats</h2>
+      <div class="stage-gallery gallery-contain">
+        <img src="assets/img/projects/eolien/img1.png" alt="Éolien 1" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img2.png" alt="Éolien 2" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img3.png" alt="Éolien 3" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img4.png" alt="Éolien 4" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img5.png" alt="Éolien 5" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img6.png" alt="Éolien 6" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img7.png" alt="Éolien 7" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img8.png" alt="Éolien 8" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/eolien/img9.png" alt="Éolien 9" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- RAPPORT PDF -->
+    <section class="stage-section">
+      <h2>Rapport complet</h2>
+      <div class="stage-pdf-wrapper">
+        <iframe src="assets/pdf/rapport-eolien.pdf" title="Rapport du projet éolien"></iframe>
+      </div>
+      <a href="assets/pdf/rapport-eolien.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le rapport PDF
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

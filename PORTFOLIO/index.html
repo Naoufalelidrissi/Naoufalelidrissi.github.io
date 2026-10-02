@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naoufal BOUKHACHA ELIDRISSI — Ingénieur Génie Électrique | Réseaux Électriques & Énergies Renouvelables</title>
+  <meta name="description" content="Portfolio de Naoufal BOUKHACHA ELIDRISSI, élève ingénieur en Génie Électrique et Énergies Renouvelables." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       CANVAS BACKGROUND (particles)
+  ══════════════════════════════════════════ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>NBE<span class="logo-bracket">]</span>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero"          class="nav-link" data-section="hero">Accueil</a></li>
+      <li><a href="#about"         class="nav-link" data-section="about">Profil</a></li>
+      <li><a href="#education"     class="nav-link" data-section="education">Formation</a></li>
+      <li><a href="#experience"    class="nav-link" data-section="experience">Expériences</a></li>
+      <li><a href="#projects"      class="nav-link" data-section="projects">Projets</a></li>
+      <li><a href="#skills"        class="nav-link" data-section="skills">Compétences</a></li>
+      <li><a href="#distinctions"  class="nav-link" data-section="distinctions">Distinctions</a></li>
+      <li><a href="#contact"       class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════════ -->
+  <section id="hero" class="section section-hero">
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <p class="hero-eyebrow reveal">Ingénieur Génie Électrique &amp; Énergies Renouvelables</p>
+        <h1 class="hero-name reveal">
+          Naoufal<br />
+          <span class="accent">BOUKHACHA</span><br />
+          ELIDRISSI
+        </h1>
+        <p class="hero-subtitle reveal">
+          Réseaux Électriques • Énergies Renouvelables • CFO/CFA<br />
+          <span class="typed-wrapper"><span id="typed-text"></span><span class="cursor">|</span></span>
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+          <a href="#contact"  class="btn btn-outline">Me contacter</a>
+        </div>
+        <div class="hero-socials reveal">
+          <a href="mailto:naoufal.boukhachaelidrissi@gmail.com" aria-label="Email" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/naoufal-boukhacha-elidrissi-7b5596227/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="tel:+33745676758" aria-label="Téléphone" class="social-icon">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="profile-frame">
+          <div class="profile-ring ring-outer"></div>
+          <div class="profile-ring ring-inner"></div>
+          <div class="profile-placeholder">
+            <img src="assets/img/naoufal.png" alt="Naoufal BOUKHACHA ELIDRISSI" />
+          </div>
+        <div class="hero-badge badge-1"><i class="fas fa-bolt"></i> CFO/CFA</div>
+        <div class="hero-badge badge-2"><i class="fas fa-network-wired"></i> Réseaux HTA/BT</div>
+        <div class="hero-badge badge-3"><i class="fas fa-wind"></i> ENR</div>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2 — ABOUT / PROFIL
+  ══════════════════════════════════════════ -->
+  <section id="about" class="section section-about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Profil</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            Ingénieur en <strong>Génie Électrique</strong>, actuellement en <strong>Master 2 Automatique et Énergie Électrique</strong>
+            à l'ENSI-P, Université de Poitiers.
+          </p>
+          <p>
+            Une expérience de terrain en <strong>études électriques</strong> (dimensionnement, protections),
+            <strong>microgrids &amp; gestion de l'énergie</strong>, instrumentation et automatisme industriel.
+            Je recherche un <strong>stage de fin d'études (PFE)</strong>, mobile sur toute la France.
+          </p>
+          <p>
+            Passionné par les réseaux électriques, les énergies renouvelables et la gestion intelligente de l'énergie (EMS/SCADA).
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Stages professionnels</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Projets techniques</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Hackathons</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Langues</span>
+          </div>
+        </div>
+
+        <div class="about-languages reveal">
+          <h3 class="subsection-title">Langues</h3>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-name">Arabe</span>
+              <div class="lang-bar"><div class="lang-fill" style="--fill:100%"></div></div>
+              <span class="lang-level">Maîtrise</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Français</span>
+              <div class="lang-bar"><div class="lang-fill" style="--fill:90%"></div></div>
+              <span class="lang-level">Courant</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Anglais</span>
+              <div class="lang-bar"><div class="lang-fill" style="--fill:85%"></div></div>
+              <span class="lang-level">Courant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 3 — FORMATION
+  ══════════════════════════════════════════ -->
+  <section id="education" class="section section-education">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Formation</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline" id="education-timeline">
+
+        <div class="timeline-item reveal" data-year="2026–2027">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card card-highlight">
+            <img src="assets/img/logos/poitiers.png" alt="Logo ENSI Poitiers" class="timeline-logo" />
+            <span class="timeline-tag">En cours</span>
+            <h3>Master 2 — Automatique et Énergie Électrique</h3>
+            <p class="timeline-school">École Nationale Supérieure d'Ingénieurs de Poitiers (ENSI-P), Université de Poitiers</p>
+            <p class="timeline-desc">Spécialisation en automatique, énergie électrique, réseaux et systèmes de conversion.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal" data-year="2023–2026">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/img/logos/enset.png" alt="Logo ENSET-M" class="timeline-logo" />
+            <span class="timeline-tag">Diplômé</span>
+            <h3>Diplôme d'ingénieur d'état</h3>
+            <p class="timeline-school">ENSET-M, Université Hassan II — Mohammedia</p>
+            <p class="timeline-desc">Génie Électrique et Énergie Renouvelable.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="2021–2023">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/img/logos/est.png" alt="Logo Université Ibn Tofail" class="timeline-logo" />
+            <span class="timeline-tag">Diplômé — Major</span>
+            <h3>DUT — Informatique Industrielle &amp; Systèmes Automatisés</h3>
+            <p class="timeline-school">EST, Université Ibn Tofail — Kénitra</p>
+            <p class="timeline-desc">Major de promotion.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="2020–2021">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Baccalauréat — Sciences Physiques</h3>
+            <p class="timeline-school">Kénitra, Maroc</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+   <!-- ══════════════════════════════════════════
+       SECTION 4 — EXPÉRIENCES
+  ══════════════════════════════════════════ -->
+  <section id="experience" class="section section-experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Expériences</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="exp-grid">
+
+        <a href="stage-ocp.html" class="exp-card exp-card-cyan reveal">
+          <div class="exp-banner">
+            <span class="exp-featured-badge">Featured — PFE</span>
+            <span class="exp-duration">2026 — 4 mois</span>
+            <div class="exp-logo"><i class="fas fa-industry"></i></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-info">
+              <h3 class="exp-company">OCP Maintenance Solutions</h3>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Safi</span>
+            </div>
+            <p class="exp-role">Stage PFE — Électricité industrielle &amp; Maintenance prédictive</p>
+            <ul class="exp-tasks">
+              <li>Conception d'un système d'acquisition synchrone 24 voies pour la surveillance vibratoire de machines électriques</li>
+              <li>Étude et développement des chaînes de conditionnement et d'acquisition des signaux vibratoires</li>
+              <li>Acquisition simultanée et synchronisée de 24 canaux pour la détection de défauts</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Maintenance prédictive</span><span>Acquisition synchrone</span><span>Instrumentation</span>
+            </div>
+            <div class="exp-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="stage-uir.html" class="exp-card exp-card-purple reveal">
+          <div class="exp-banner">
+            <span class="exp-duration">2025 — 2 mois</span>
+            <div class="exp-logo"><i class="fas fa-industry"></i></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-info">
+              <h3 class="exp-company">UIR — Laboratoire LERMA</h3>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Rabat</span>
+            </div>
+            <p class="exp-role">Stage — Gestion de l'énergie &amp; supervision des microgrids</p>
+            <ul class="exp-tasks">
+              <li>Supervision et gestion énergétique entre deux microgrids hybrides (PV, éolien, batteries)</li>
+              <li>Supervision SCADA sous ThingsBoard : suivi temps réel des productions et du SOC</li>
+              <li>Algorithme de gestion énergétique sous Python (bilans, SOC, transferts d'énergie)</li>
+            </ul>
+            <div class="exp-tags">
+              <span>ThingsBoard</span><span>SCADA</span><span>Python</span><span>Microgrid</span>
+            </div>
+            <div class="exp-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="stage-cmcp.html" class="exp-card exp-card-green reveal">
+          <div class="exp-banner">
+            <span class="exp-duration">2024 — 2 mois</span>
+            <div class="exp-logo"><i class="fas fa-industry"></i></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-info">
+              <h3 class="exp-company">International Paper — CMCP</h3>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Kénitra</span>
+            </div>
+            <p class="exp-role">Stage — Études électriques (dimensionnement HTA/BT)</p>
+            <ul class="exp-tasks">
+              <li>Dimensionnement pour l'intégration d'un transformateur 2500 kVA (20 kV / 400 V) : câbles, disjoncteurs, jeux de barres</li>
+              <li>Études de flux de puissance (Load Flow), court-circuit et Arc Flash sous ETAP</li>
+              <li>Contribution à la coordination des protections électriques</li>
+            </ul>
+            <div class="exp-tags">
+              <span>ETAP</span><span>HTA/BT</span><span>Arc Flash</span>
+            </div>
+            <div class="exp-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="stage-renault.html" class="exp-card exp-card-gold reveal">
+          <div class="exp-banner">
+            <span class="exp-duration">2023 — 2 mois</span>
+            <div class="exp-logo"><i class="fas fa-industry"></i></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-info">
+              <h3 class="exp-company">Renault Tanger Exploitation</h3>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Tanger</span>
+            </div>
+            <p class="exp-role">Stage — Automatisme &amp; supervision industrielle</p>
+            <ul class="exp-tasks">
+              <li>IHM ODIL de suivi temps réel des points de soudage/rodage (zones BM30/BM80)</li>
+              <li>Programmation Step7 pour la gestion automatique des alertes de maintenance</li>
+              <li>Communication inter-automates entre trois automates Siemens</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Step7</span><span>IHM ODIL</span><span>Automates Siemens</span>
+            </div>
+            <div class="exp-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 5 — PROJETS
+  ══════════════════════════════════════════ -->
+  <section id="projects" class="section section-projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Projets Techniques</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ── PROJET 1 ── -->
+        <a href="projet-eolien.html" class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/projects/eolien/min.png" alt="Projet Éolien" class="project-img" />
+            <div class="project-img-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>Voir détails</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-icon"><i class="fas fa-wind"></i></div>
+            <h3 class="project-title">Projet Éolien — PMSM</h3>
+            <p class="project-desc">
+              Modélisation et simulation d'un système éolien à PMSM avec redressement AC/DC,
+              MPPT, commande FOC et onduleur triphasé PWM.
+            </p>
+            <div class="project-tags">
+              <span>MATLAB/Simulink</span><span>PMSM</span><span>MPPT</span><span>FOC</span><span>PWM</span>
+            </div>
+            <div class="project-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- ── PROJET 2 ── -->
+        <a href="projet-hybride.html" class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/projects/hybride/min1.png" alt="Système Hybride" class="project-img" />
+            <div class="project-img-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>Voir détails</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-icon"><i class="fas fa-solar-panel"></i></div>
+            <h3 class="project-title">Système Hybride Multi-Sources</h3>
+            <p class="project-desc">
+              Gestion énergétique d'un réseau combinant éolienne, groupe diesel et stockage,
+              avec stratégie EMS.
+            </p>
+            <div class="project-tags">
+              <span>EMS</span><span>Hybride</span><span>Stockage</span><span>HOMER PRO</span>
+            </div>
+            <div class="project-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- ── PROJET 3 ── -->
+        <a href="projet-onduleur.html" class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/projects/onduleur/projet-onduleur2.png" alt="Onduleur BLDC" class="project-img" />
+            <div class="project-img-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>Voir détails</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-icon"><i class="fas fa-microchip"></i></div>
+            <h3 class="project-title">Onduleur Triphasé PWM — BLDC</h3>
+            <p class="project-desc">
+              ESC basé sur IR2101 et MOSFET, intégrant génération PWM, pilotage des phases
+              et commande FOC.
+            </p>
+            <div class="project-tags">
+              <span>IR2101</span><span>MOSFET</span><span>FOC</span><span>Altium Designer</span>
+            </div>
+            <div class="project-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- ── PROJET 4 ── -->
+        <a href="projet-drone.html" class="project-card reveal project-card-featured">
+          <div class="project-img-wrapper">
+            <img src="assets/img/projects/drone/projet-drone.png" alt="Quake Drone" class="project-img" />
+            <div class="project-img-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>Voir détails</span>
+            </div>
+            <span class="project-featured-badge">Featured</span>
+          </div>
+          <div class="project-body">
+            <div class="project-icon"><i class="fas fa-helicopter"></i></div>
+            <h3 class="project-title">Quake Drone</h3>
+            <p class="project-desc">
+              Drone intelligent avec vision par ordinateur et IoT pour localiser les survivants
+              après un séisme.
+            </p>
+            <div class="project-tags">
+              <span>Vision IA</span><span>IoT</span><span>MQTT</span><span>Python</span><span>Web</span>
+            </div>
+            <div class="project-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+         <!-- ── PROJET 5 ── -->
+         <a href="projet-automatisme.html" class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/projects/automatisme/auto.png" alt="Quake Drone" class="project-img" />
+            <div class="project-img-wrapper">
+              <img src="assets/img/projects/automatisme/auto.png" alt="Station de Rainurage et de Perçage" class="project-img" />
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-icon"><i class="fas fa-industry"></i></div>
+            <h3 class="project-title">Station de Rainurage et de Perçage</h3>
+            <p class="project-desc">
+              Automatisme industriel : GRAFCET, câblage E/S, automate Siemens S7-300 et
+              simulation pneumatique sous FluidSIM.
+            </p>
+            <div class="project-tags">
+              <span>GRAFCET</span><span>STEP 7</span><span>Siemens S7-300</span><span>FluidSIM</span><span>Ladder</span>
+            </div>
+            <div class="project-cta">Voir le projet complet <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 6 — COMPÉTENCES
+  ══════════════════════════════════════════ -->
+  <section id="skills" class="section section-skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Compétences</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-bolt"></i>
+          <h3>Réseaux électriques & Études techniques</h3>
+        </div>
+        <div class="skill-tags">
+          <span>HT/BT</span><span>Dimensionnement</span><span>Flux de puissance</span>
+          <span>Court-circuit</span><span>Arc Flash</span><span>Coordination protections</span><span>Bilans de puissance</span>
+        </div>
+      </div>
+      
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-solar-panel"></i>
+          <h3>Énergies renouvelables & Gestion de l'énergie</h3>
+        </div>
+        <div class="skill-tags">
+          <span>Photovoltaïque</span><span>Éolien (PMSM/FOC/MPPT)</span><span>Microgrids</span>
+          <span>Stockage batterie</span><span>EMS</span><span>SCADA</span>
+        </div>
+      </div>
+      
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-chart-line"></i>
+          <h3>Simulation & Conception électrique</h3>
+        </div>
+        <div class="skill-tags">
+          <span>ETAP</span><span>MATLAB/Simulink</span><span>PVsyst</span><span>LTspice</span>
+          <span>Caneco BT</span><span>AutoCAD Electrical</span><span>EPLAN</span>
+        </div>
+      </div>
+      
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-industry"></i>
+          <h3>Automatisme & Supervision industrielle</h3>
+        </div>
+        <div class="skill-tags">
+          <span>TIA Portal</span><span>Step7</span><span>WinCC</span><span>Node-RED</span>
+          <span>IHM</span><span>Supervision</span>
+        </div>
+      </div>
+      
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-wifi"></i>
+          <h3>Communication & Gestion énergétique</h3>
+        </div>
+        <div class="skill-tags">
+          <span>ThingsBoard</span><span>MQTT/HTTP</span><span>Modbus TCP/IP</span>
+        </div>
+      </div>
+      
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <i class="fas fa-memory"></i>
+          <h3>Instrumentation & Électronique de puissance</h3>
+        </div>
+        <div class="skill-tags">
+          <span>Acquisition synchrone multi-voies</span><span>Conditionnement de signal</span>
+          <span>Onduleurs</span><span>Commande vectorielle FOC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 7 — DISTINCTIONS
+  ══════════════════════════════════════════ -->
+  <section id="distinctions" class="section section-distinctions">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Distinctions &amp; Compétitions</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="awards-grid">
+
+        <a href="distinction-ensaj.html" class="award-card award-gold reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/ensaj-podium.jpg');"></div>
+          <div class="award-body">
+            <div class="award-rank">🥇</div>
+            <h3>1re place — ENSAJ</h3>
+            <p>Compétition technologique nationale</p>
+          </div>
+        </a>
+
+        <a href="distinction-aero.html" class="award-card award-gold reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/aero-podium.jpg');"></div>
+          <div class="award-body">
+            <div class="award-rank">🥇</div>
+            <h3>1re place — Journée Aéronautique</h3>
+            <p>ENSEM</p>
+          </div>
+        </a>
+
+        <a href="distinction-ai2sd.html" class="award-card award-silver reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/ai2sd-prix.jpg');"></div>
+          <div class="award-body">
+            <div class="award-rank">🥈</div>
+            <h3>2e place — AI2SD Hackathon</h3>
+            <p>Smart Cities &amp; IA — Tanger, sous le Haut Patronage de Sa Majesté le Roi Mohammed VI</p>
+          </div>
+        </a>
+
+        <a href="distinction-innovation.html" class="award-card award-silver reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/innovation-podium.jpg');"></div>
+          <div class="award-body">
+            <div class="award-rank">🥈</div>
+            <h3>2e place — Hackathon d'Innovation</h3>
+            <p>ENSEM</p>
+          </div>
+        </a>
+
+        <a href="distinction-somorobot.html" class="award-card award-special reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/somorobot-trophee.jpg');"></div>
+          <div class="award-body">
+            <div class="award-rank">🏆</div>
+            <h3>Meilleure équipe d'ingénierie</h3>
+            <p>ENSA Kénitra — Somo Robot</p>
+          </div>
+        </a>
+
+        <a href="vie-etudiante.html" class="award-card award-special reveal">
+          <div class="award-banner" style="background-image:url('assets/img/distinctions/multiples.png');"></div>
+          <div class="award-body">
+            <div class="award-rank">⚡</div>
+            <h3>Vie étudiante &amp; engagement</h3>
+            <p>Chef de cellule technique Electrolab, conférencier, organisateur de compétitions</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 8 — CONTACT
+  ══════════════════════════════════════════ -->
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">07</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-text reveal">
+          <p class="contact-lead">
+            Je recherche un <strong>stage de fin d'études (PFE)</strong>, mobile sur toute la France.
+          </p>
+          <p>N'hésitez pas à me contacter pour toute opportunité ou collaboration.</p>
+        </div>
+
+        <div class="contact-cards reveal">
+          <a href="mailto:naoufal.boukhachaelidrissi@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">naoufal.boukhachaelidrissi@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+33745676758" class="contact-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <span class="contact-card-label">Téléphone</span>
+              <span class="contact-card-value">+33 7 45 67 67 58</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/naoufal-boukhacha-elidrissi-7b5596227/" target="_blank" class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">Naoufal BOUKHACHA ELIDRISSI</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">[NBE]</span>
+      <p>© 2026 Naoufal BOUKHACHA ELIDRISSI — Tous droits réservés</p>
+      <p class="footer-sub">Génie Électrique &amp; Énergies Renouvelables</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

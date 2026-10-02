@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microgrid hybride éolien — EMS | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#projects" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">Projet de fin de module — 2025-2026</span>
+      <h1>Système éolien hybride à PMSM : batterie, groupe diesel et gestion énergétique (EMS)</h1>
+      <p class="stage-subtitle">Microgrid basse tension 400 V alimentant une charge résidentielle, en mode réseau connecté et îloté</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-university"></i> ENSET Mohammedia — Génie Électrique et Énergies Renouvelables</span>
+        <span><i class="fas fa-users"></i> Projet en binôme avec Khayr eddin Eddarraz</span>
+        <span><i class="fas fa-user-tie"></i> Proposé par Pr. Kissaoui</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte et objectif</h2>
+      <p>
+        Une éolienne seule ne peut pas garantir une alimentation continue : la production varie avec le
+        vent. Ce projet étend une chaîne éolienne à PMSM avec un <strong>stockage par batterie</strong>,
+        un <strong>groupe diesel de secours</strong> et le réseau 400 V, le tout coordonné par un
+        <strong>système de gestion énergétique (EMS)</strong>. L'objectif était de garantir en toutes
+        circonstances l'alimentation d'une charge résidentielle, en privilégiant l'énergie éolienne et en
+        limitant le diesel aux situations critiques. L'ensemble est modélisé et simulé sous
+        <strong>MATLAB/Simulink</strong>.
+      </p>
+    </section>
+
+    <!-- CHIFFRES CLES -->
+    <section class="stage-section">
+      <div class="stage-stats">
+        <div class="stage-stat"><span class="stage-stat-value">400 V</span><span class="stage-stat-label">Réseau basse tension</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">≈ 23 kW</span><span class="stage-stat-label">Production éolienne moyenne</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">≈ 10 kW</span><span class="stage-stat-label">Charge résidentielle</span></div>
+        <div class="stage-stat"><span class="stage-stat-value">5</span><span class="stage-stat-label">Scénarios simulés</span></div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="stage-section">
+      <h2>Architecture du microgrid</h2>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-wind"></i>
+          <h4>Éolienne à PMSM</h4>
+          <p>Source renouvelable principale, pilotée par <strong>commande FOC</strong> et algorithme <strong>MPPT</strong></p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-car-battery"></i>
+          <h4>Batterie de stockage</h4>
+          <p>Bloc <strong>Battery</strong> de Simscape : stocke l'excédent, comble les déficits et fournit le suivi du <strong>SOC</strong></p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-exchange-alt"></i>
+          <h4>Hacheur Buck-Boost</h4>
+          <p>Interface bidirectionnelle entre la batterie et le bus DC, en charge comme en décharge</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-gas-pump"></i>
+          <h4>Groupe diesel</h4>
+          <p>Secours ultime, modélisé par une machine synchrone à aimants permanents (PMSG)</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-home"></i>
+          <h4>Charge résidentielle</h4>
+          <p>Modélisée par une résistance équivalente pour étudier les échanges de puissance et la stabilité</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-brain"></i>
+          <h4>EMS</h4>
+          <p>Reçoit vent, charge, SOC et disponibilité du réseau, puis commande réseau, onduleur, batterie et diesel</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODES -->
+    <section class="stage-section">
+      <h2>Stratégie de gestion énergétique</h2>
+      <p>
+        La priorité est donnée à l'alimentation de la charge, puis à l'éolien, puis à la batterie. Le diesel
+        n'intervient qu'en dernier recours. L'EMS choisit entre cinq modes de fonctionnement :
+      </p>
+      <ul class="stage-list">
+        <li><strong>Éolien seul :</strong> la charge est alimentée par l'éolienne ; l'excédent charge la batterie, puis est injecté dans le réseau si la batterie est pleine</li>
+        <li><strong>Éolien + réseau :</strong> le réseau complète la production éolienne insuffisante, la batterie reste déconnectée</li>
+        <li><strong>Réseau seul :</strong> sans vent, la charge est alimentée par le réseau</li>
+        <li><strong>Batterie :</strong> en cas de coupure du réseau, la batterie alimente la charge tant que son SOC reste au-dessus du seuil minimal</li>
+        <li><strong>Diesel :</strong> si le réseau est absent et la batterie fortement déchargée, le groupe diesel démarre et alimente seul la charge</li>
+      </ul>
+    </section>
+
+    <!-- COMMANDE DC-DC -->
+    <section class="stage-section">
+      <h2>Commande du convertisseur de la batterie</h2>
+      <p>
+        La commande du hacheur change automatiquement selon l'état du réseau, grâce à un sélecteur logique
+        sous Simulink :
+      </p>
+      <ul class="stage-list">
+        <li><strong>Réseau connecté :</strong> le réseau tient le bus DC. La batterie absorbe ou fournit la puissance excédentaire, avec un courant de référence <strong>Ibat,ref = Pexc / Vbat</strong> et une boucle de régulation de courant</li>
+        <li><strong>Mode îloté :</strong> la batterie devient responsable de la tension du bus DC : un régulateur de tension génère le courant de référence, suivi par la boucle de courant du hacheur</li>
+      </ul>
+    </section>
+
+    <!-- SCENARIOS -->
+    <section class="stage-section">
+      <h2>Scénarios de simulation validés</h2>
+      <ul class="stage-list">
+        <li><strong>Scénario 1 — réseau connecté, éolien, batterie déchargée :</strong> la production (≈ 23 kW) dépasse la charge (≈ 10 kW), l'excédent recharge la batterie et le SOC augmente progressivement</li>
+        <li><strong>Scénario 2 — réseau connecté, éolien, batterie chargée :</strong> la batterie est déconnectée, l'éolien couvre la charge et le surplus est injecté dans le réseau</li>
+        <li><strong>Scénario 3 — réseau connecté, sans éolien :</strong> le réseau alimente seul la charge, avec de faibles pertes de conversion</li>
+        <li><strong>Scénario 4 — îloté, batterie chargée :</strong> la batterie alimente la charge et régule le bus DC, son SOC diminue progressivement</li>
+        <li><strong>Scénario 5 — îloté, batterie déchargée :</strong> l'EMS démarre le groupe diesel, dont la puissance suit celle de la charge</li>
+      </ul>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="stage-section">
+      <h2>Résultat et perspectives</h2>
+      <p>
+        Les cinq scénarios montrent que l'EMS prend des décisions cohérentes selon l'état des sources, du
+        stockage et de la charge, tout en préservant l'équilibre énergétique et la stabilité du bus DC.
+        Dans le scénario 1, une faible part de l'excédent est absorbée par le réseau à cause du retard de
+        calcul du courant de référence de la batterie. En perspective : stratégies de gestion plus avancées,
+        intégration d'autres sources renouvelables, et validation expérimentale sur banc d'essai ou
+        plateforme temps réel.
+      </p>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>MATLAB/Simulink</span>
+        <span>EMS</span>
+        <span>Microgrid</span>
+        <span>PMSM / FOC</span>
+        <span>Stockage batterie</span>
+        <span>Hacheur Buck-Boost</span>
+        <span>Groupe diesel</span>
+        <span>Mode îloté</span>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="stage-section">
+      <h2>Modèles Simulink et résultats</h2>
+      <div class="stage-gallery gallery-contain">
+        <img src="assets/img/projects/hybride/img1.jpg" alt="Hybride 1" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/hybride/img2.jpg" alt="Hybride 2" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/hybride/img3.jpg" alt="Hybride 3" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/hybride/img4.jpg" alt="Hybride 4" onclick="openLightbox(this.src)" />
+        <img src="assets/img/projects/hybride/img5.jpg" alt="Hybride 5" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- RAPPORT PDF -->
+    <section class="stage-section">
+      <h2>Rapport complet</h2>
+      <div class="stage-pdf-wrapper">
+        <iframe src="assets/pdf/rapport-hybride.pdf" title="Rapport du projet hybride"></iframe>
+      </div>
+      <a href="assets/pdf/rapport-hybride.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le rapport PDF
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

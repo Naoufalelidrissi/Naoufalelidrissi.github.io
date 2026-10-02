@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage — UIR / Laboratoire LERMA | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#experience" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">2025 — 2 mois</span>
+      <h1>Système embarqué de supervision SCADA et gestion intelligente de l'énergie entre deux microgrids hybrides</h1>
+      <p class="stage-subtitle">Stage de recherche appliquée — International University of Rabat, Laboratoire LERMA</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-building"></i> UIR — Laboratoire LERMA</span>
+        <span><i class="fas fa-map-marker-alt"></i> Rabat, Maroc</span>
+        <span><i class="fas fa-user-tie"></i> Encadrant : Pr. M. Bakhouya</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte</h2>
+      <p>
+        Ce stage a été réalisé au <strong>Laboratoire LERMA</strong> de l'Université Internationale
+        de Rabat (UIR), au sein de la plateforme <strong>Energy Efficient Building (EEB)</strong>, dédiée
+        aux systèmes intelligents et à la transition énergétique. L'objectif était de concevoir un système
+        complet de <strong>supervision et de gestion automatique de l'énergie</strong> entre deux microgrids
+        hybrides interconnectés (solaire, éolien, batteries), avec basculement automatique basé sur
+        l'état de charge (SOC) des batteries.
+      </p>
+    </section>
+
+    <!-- ARCHITECTURE TECHNIQUE -->
+    <section class="stage-section">
+      <h2>Architecture &amp; réalisation matérielle</h2>
+      <p>Trois cartes électroniques personnalisées ont été conçues et développées :</p>
+      <div class="stage-specs-grid">
+        <div class="stage-spec-card">
+          <i class="fas fa-solar-panel"></i>
+          <h4>PCB 1 — Mesure PV2</h4>
+          <p>Circuit de mesure de tension et de courant dédié au second panneau photovoltaïque</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-car-battery"></i>
+          <h4>PCB 2 — Supervision batteries</h4>
+          <p>4 capteurs de courant (entrée/sortie) + 2 capteurs de tension pour les batteries 1 et 2</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-toggle-on"></i>
+          <h4>PCB 3 — Commutation</h4>
+          <p>Circuit pilotant 7 relais via Arduino UNO pour le basculement entre microgrids</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-microchip"></i>
+          <h4>Unité centrale</h4>
+          <p><strong>Raspberry Pi</strong> — agrégation des données des 3 PCB, calculs temps réel, logique de décision</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-satellite-dish"></i>
+          <h4>Acquisition distante</h4>
+          <p>Collecte des données PV1 / éolienne via <strong>Bluetooth</strong> depuis le contrôleur hybride</p>
+        </div>
+        <div class="stage-spec-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Supervision SCADA</h4>
+          <p><strong>ThingsBoard</strong> — dashboards temps réel (production, SOC, transferts, historiques)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE COMM -->
+    <section class="stage-section">
+      <h2>Architecture logicielle &amp; communication</h2>
+      <p>
+        La chaîne de traitement repose sur trois couches : <strong>Node-RED</strong> orchestre l'acquisition
+        (liaisons série Arduino, MQTT depuis le second Raspberry Pi, station météo) et l'envoi des
+        télémetries vers ThingsBoard en HTTP ; des <strong>scripts Python</strong> exécutent en temps réel
+        l'estimation du SOC, les bilans de puissance et la logique de basculement ; les commandes de
+        retour (modes Auto/Manuel) transitent par MQTT (RPC) depuis ThingsBoard vers Node-RED puis
+        vers la couche Python.
+      </p>
+      <p>
+        L'estimation du <strong>SOC</strong> combine deux méthodes selon l'état du système : comptage
+        coulombmétrique lorsqu'un courant significatif circule, et estimation basée sur la tension à
+        vide lors des phases de quasi-repos (plus de 5 minutes sans courant significatif) — une approche
+        hybride qui améliore la robustesse de la mesure.
+      </p>
+      <p>
+        L'algorithme de basculement applique une logique à <strong>hystérésis</strong> (seuil haut 80 %,
+        marge de 3 %) pour éviter les oscillations entre trois modes de fonctionnement : mode normal,
+        Batterie 1 assiste le Microgrid 2, ou Batterie 2 assiste le Microgrid 1 — validé en fonctionnement
+        automatique.
+      </p>
+    </section>
+
+    <!-- MISSIONS -->
+    <section class="stage-section">
+      <h2>Réalisations</h2>
+      <ul class="stage-list">
+        <li>Conception de circuits de mesure (tension/courant) pour panneaux PV, batteries et éolienne</li>
+        <li>Développement des 3 PCB personnalisés (mesure PV2, supervision batteries, commutation relais)</li>
+        <li>Intégration matérielle et logicielle complète sur Raspberry Pi</li>
+        <li>Développement du SCADA ThingsBoard : dashboards temps réel (production, SOC, consommations, transferts, historiques)</li>
+        <li>Architecture de communication Node-RED ↔ Python ↔ Raspberry Pi, Bluetooth, MQTT/HTTP</li>
+        <li>Implémentation de l'algorithme Python de calcul temps réel (puissance, SOC, bilans énergétiques)</li>
+        <li>Automatisation du basculement entre microgrids basée sur le SOC (mode automatique fonctionnel)</li>
+        <li>Analyse de corrélation irradiation solaire ↔ production PV et vitesse du vent ↔ production éolienne, avec visualisation des courbes de basculement SOC</li>
+      </ul>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="stage-section">
+      <h2>Résultats &amp; perspectives</h2>
+      <p>
+        L'intégration matérielle et logicielle s'est révélée fonctionnelle : les résultats expérimentaux
+        ont confirmé le bon comportement des chaînes PV, éolienne, et de la stratégie de commutation basée
+        sur le SOC. Le système démontre la faisabilité d'une plateforme unifiée de supervision et de
+        gestion intelligente pour microgrids hybrides interconnectés. Les perspectives identifiées portent
+        sur l'intégration de prévisions météo dans l'algorithme de basculement, l'exploration de méthodes
+        d'estimation SOC plus avancées (filtrage de Kalman, IA), et l'extension vers la gestion
+        décentralisée des échanges d'énergie entre microgrids.
+      </p>
+    </section>
+
+    <!-- TAGS -->
+    <section class="stage-section">
+      <div class="stage-tags">
+        <span>SCADA</span>
+        <span>ThingsBoard</span>
+        <span>Microgrid hybride</span>
+        <span>Raspberry Pi</span>
+        <span>Node-RED</span>
+        <span>Python</span>
+        <span>Arduino</span>
+        <span>Gestion SOC</span>
+        <span>MQTT / HTTP</span>
+        <span>Conception PCB</span>
+      </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section class="stage-section">
+      <h2>Photos</h2>
+      <div class="stage-gallery">
+        <img src="assets/img/stages/uir/img1.png" alt="Photo stage UIR 1" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img2.jpg" alt="Photo stage UIR 2" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img3.jpg" alt="Photo stage UIR 3" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img4.png" alt="Photo stage UIR 4" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img5.png" alt="Photo stage UIR 5" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img6.jpg" alt="Photo stage UIR 6" onclick="openLightbox(this.src)" />
+        <img src="assets/img/stages/uir/img7.png" alt="Photo stage UIR 7" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- RAPPORT PDF -->
+    <section class="stage-section">
+      <h2>Rapport de stage complet</h2>
+      <div class="stage-pdf-wrapper">
+        <iframe src="assets/pdf/rapport-uir.pdf" title="Rapport de stage UIR"></iframe>
+      </div>
+      <a href="assets/pdf/rapport-uir.pdf" download class="btn btn-primary stage-download-btn">
+        <i class="fas fa-download"></i> Télécharger le rapport PDF
+      </a>
+    </section>
+
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

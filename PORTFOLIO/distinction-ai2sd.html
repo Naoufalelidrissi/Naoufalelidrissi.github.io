@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2e place — AI2SD Hackathon Tanger | Naoufal BOUKHACHA ELIDRISSI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stage-page.css" />
+</head>
+<body class="stage-body">
+
+  <a href="index.html#distinctions" class="stage-back-btn">
+    <i class="fas fa-arrow-left"></i> Retour au portfolio
+  </a>
+
+  <div class="stage-container">
+
+    <!-- HEADER -->
+    <header class="stage-header">
+      <span class="stage-duration">🥈 2e place — 20 000 MAD</span>
+      <h1>2e place au Hackathon AI2SD — Smart Cities &amp; IA</h1>
+      <p class="stage-subtitle">Tanger, sous le Haut Patronage de Sa Majesté le Roi Mohammed VI</p>
+      <div class="stage-meta">
+        <span><i class="fas fa-trophy"></i> 2e place nationale — prix de 20 000 MAD</span>
+        <span><i class="fas fa-users"></i> 30 équipes finalistes parmi plus de 300 projets soumis</span>
+      </div>
+    </header>
+
+    <!-- CONTEXTE -->
+    <section class="stage-section">
+      <h2>Contexte</h2>
+      <p>
+        Parmi plus de <strong>300 projets</strong> soumis de tout le Royaume, <strong>30 équipes</strong>
+        ont été sélectionnées pour la grande finale du Hackathon <strong>AI2SD</strong> (Smart Cities
+        &amp; IA), organisé à Tanger sous le Haut Patronage de Sa Majesté le Roi Mohammed VI. Cette
+        édition exceptionnelle a été marquée par la présence du <strong>Ministre de l'Industrie et du
+        Commerce</strong>. Notre équipe a fièrement représenté l'<strong>ENSET Mohammedia</strong> et
+        a remporté la <strong>2e place</strong>, assortie d'un prix de <strong>20 000 MAD</strong>, face à
+        une forte concurrence nationale. Cette distinction valorise à la fois l'innovation, le travail
+        d'équipe et l'engagement académique de notre établissement.
+      </p>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="stage-section">
+      <h2>Photos</h2>
+      <div class="stage-gallery">
+        <img src="assets/img/distinctions/ai2sd-prix.jpg" alt="L'équipe avec le prix" onclick="openLightbox(this.src)" />
+        <img src="assets/img/distinctions/ai2sd-groupes.jpeg" alt="Les équipes 1re et 2e place avec le maire de Tanger et les responsables de l'événement" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vue agrandie" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
